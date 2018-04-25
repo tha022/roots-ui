@@ -4,11 +4,15 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --proxy-config proxy.conf.json",
-    "build": "ng build",
+    "start": "node app.js",
+    "build": "ng build --${PROFILE}",
+    "build:dev": "ng build --dev",
+    "build:prod": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --aot=false -${PROFILE}",
+    "deploy": "git push origin master && git push heroku master"
   },
   "private": true,
   "dependencies": {
