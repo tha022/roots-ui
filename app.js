@@ -7,7 +7,7 @@ const app = express();
 // in the dist directory
 
 app.use(express.static(__dirname + '/dist'));
-app.use('/api', proxy({target: 'https://roots-api.herokuapp.com', changeOrigin:false}));
+app.use('/api', proxy({target: 'https://roots-api.herokuapp.com', changeOrigin:true}));
 
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname + '/dist/index.html'));
