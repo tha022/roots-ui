@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "https://roots-api.herokuapp.com",
-    "secure": true
+    "target": "http://localhost:3000",
+    "secure": false
   }
 }
